@@ -1,8 +1,8 @@
 {
-  "name": "NEW APP NAME",
+  "name": "init",
   "version": "0.0.1",
   "license": "",
-  "repository": "https://github.com/stevenluong/",
+  "repository": "https://github.com/stevenluong/init",
   "dependencies": {
     "http-server": "*",
     "bower": "*",
