@@ -6,13 +6,15 @@ module.exports = {
 				field1: "value1",
 				field2: "value2",
 			}};
-		ror_post(data,"slapps.fr","/APP/ror/OBJECTS.json");
+		ror_post(data,"slapps.fr","/APP/ror/OBJECTS.json",function(res){
+			console.log(res);
+		});
 	},
-	ror_post: function(data,host,path){
+	ror_post: function(data,host,port,path,callback){
 		var dataStr = JSON.stringify(data);
 		var options = {
 			host: host,
-			port: 80,
+			port: port,
 			path: path,
 			method: 'POST',
 			headers: {
@@ -30,6 +32,7 @@ module.exports = {
 
 			res.on('end', function() {
 				//console.log(str);
+				callback(str);
 			})
 
 			res.on('error', function(error) {
