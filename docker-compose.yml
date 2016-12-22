@@ -44,6 +44,16 @@ services:
         restart: always
         networks:
             - nginx_default
+    nginx:
+        build: .
+        ports:
+            - "80:80"
+        volumes:
+            - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./nginx/data:/nginx/data
+            - ./nginx/logs:/nginx/logs
+        restart: always
+
 networks:
     nginx_default:
         external: true
