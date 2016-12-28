@@ -22,7 +22,7 @@ var mainApp = angular.module('mainApp', [
     //      LoopBackResourceProvider.setAuthHeader('X-Access-Token');
     //
     //         // Change the URL where to access the LoopBack REST API server
-    LoopBackResourceProvider.setUrlBase('http://slapps.fr:3000/api');
+    LoopBackResourceProvider.setUrlBase('http://localhost:3000/api');
 });
 mainApp.config(['$routeProvider',
         function($routeProvider) {
@@ -43,6 +43,11 @@ mainApp.config(['$routeProvider',
                 templateUrl: 'partials/logout.html',
                 controller: 'logoutCtrl'
             }).
+             when('/delete', {
+                templateUrl: 'partials/delete.html',
+                controller: 'deleteCtrl'
+            }).
+
 
 
             otherwise({
